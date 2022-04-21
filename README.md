@@ -11,3 +11,11 @@ To cite R itself, include `"base"` in your package list.
 The function will save a .bib file to your working directory, which you can upload to reference managers that accept them for import.
 
 _There's a StackOverflow thread cited in the code that suggests `sink()` may cause issues if you have another package loaded that also uses it. This is the easiest way to get a well-formed .bib file, but run at your own risk._
+
+To export to Endnote format install package "rbibutils": https://geobosh.github.io/rbibutils/ and set `Endnote = T`:
+
+`my_packs <- c("ggplot2", "Hmisc", "base", "rbibutils")`
+
+`citeRpacks(my_packs, "mybibfile", Endnote = TRUE)`
+
+The function will save a .end file in addition to the .bib file to your working directory, which you can import into Endnote.
